@@ -6,7 +6,7 @@ var AppView = Backbone.View.extend({
     this.videos = new Videos(window.exampleVideoData);
     this.render();
     this.search = new SearchView();
-    this.player = new VideoPlayerView();
+    this.player = new VideoPlayerView({collection: this.videos});
     $('.player h5').remove();
     this.videoList = new VideoListView({collection: this.videos}).render();
 
